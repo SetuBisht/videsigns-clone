@@ -164,6 +164,31 @@ body {
     width: 153px;
     height: 153px;
 }
+  .rotatingSvg {
+    animation: rotateClockwise 10s linear infinite;
+}
+.rotatingantiSvg {
+    animation: rotateAntiClockwise 10s linear infinite;
+}
+
+@keyframes rotateAntiClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+@keyframes rotateClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 .spiral .spiral_b {
     position: absolute;
     width: 153px;

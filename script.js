@@ -12,14 +12,16 @@ const timeLine = gsap.timeline({
     start: "top top",
     end: () => "+=" + innerHeight * 2,
     pin: ".desktop",
-    scrub: 0.8,
+    scrub: 1,
   },
 });
 
 timeLine
-  .to(".image1", 3, {
+  .to(".image1", {
     yPercent: "-300",
+    duration: 2,
   })
   .to(".image2", 3, {
     yPercent: "-300",
+    duration: 2,
   });
