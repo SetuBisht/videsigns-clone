@@ -2,7 +2,11 @@
     margin: 0px;
     padding: 0px;
 }
-
+@font-face {
+    font-family: 'Dream Orphans';
+    src: url('/assets/DreamOrphansIt.otf') format('otf');
+    
+}
 body {
     font-family: 'Open Sans',
         sans-serif;
@@ -13,6 +17,7 @@ body {
     line-height: 28px;
     -webkit-font-smoothing: antialiased;
     overflow: overlay;
+    overflow-x: hidden;
 }
 .hero{
     display: flex;
@@ -134,7 +139,7 @@ body {
     text-transform: capitalize;
 }
 .vim {
-    font-family: 'Dream orphans', sans-serif;
+    font-family: 'Dream Orphans', sans-serif;
     line-height: 1.2;
     font-weight: 400;
 }
@@ -165,10 +170,10 @@ body {
     height: 153px;
 }
   .rotatingSvg {
-    animation: rotateClockwise 10s linear infinite;
+    animation: rotateClockwise 15s linear infinite;
 }
 .rotatingantiSvg {
-    animation: rotateAntiClockwise 10s linear infinite;
+    animation: rotateAntiClockwise 15s linear infinite;
 }
 
 @keyframes rotateAntiClockwise {
