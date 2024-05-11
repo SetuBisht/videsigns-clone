@@ -238,8 +238,6 @@ body {
     position: relative;
     top: 0px;
     display: flex;
-    max-height: 100vh;
-    min-height: 100vh;
     padding-top: 100px;
     padding-bottom: 100px;
     flex-direction: column;
@@ -248,7 +246,6 @@ body {
     background-color: #080621;
 }
 .hero-content-wrapper.sticky {
-    height: 15%;
     margin-bottom: 0px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -358,19 +355,21 @@ body {
 .mobile-holder{
         width: 100%;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        margin-top: 34px;
+        justify-content: center;
+        gap:100px;
+        align-items: flex-start;
         grid-auto-columns: 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
         font-family: 'Open Sans', sans-serif;
+        height: fit-content;
 }
 .mobile {
     z-index: 0;
     display: flex;
     overflow: hidden;
     width: 22%;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;

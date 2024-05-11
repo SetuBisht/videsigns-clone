@@ -6,8 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let vim = document.querySelectorAll(".vim");
   let spiral = document.querySelectorAll(".spiral");
   let button = document.querySelectorAll(".button-container");
+  let sticky = document.querySelectorAll(".sticky-content");
   div.forEach((div1) => {
     div1.style.opacity = 0;
+    div1.style.transition = "opacity 0.5s ease , transform 0.5s ease";
+  });
+  sticky.forEach((div1) => {
+    div1.style.opacity = 0;
+    div1.style.transform = "translate3d(0px, 104px, 0px)";
     div1.style.transition = "opacity 0.5s ease , transform 0.5s ease";
   });
   spiral[0].style.transition = "opacity 0.5s ease, transform 0.5s ease";
@@ -66,18 +72,39 @@ const timeLine = gsap.timeline({
   scrollTrigger: {
     trigger: ".desktop",
     start: "top top",
-    end: () => "+=" + innerHeight * 2,
+    end: () => "+=" + innerHeight * 3,
     pin: ".desktop",
+    pinSpacing: false,
     scrub: 1,
   },
 });
 
 timeLine
   .to(".image1", {
-    yPercent: "-300",
-    duration: 2,
+    yPercent: "-150",
+    duration: 1,
+    delay: 2,
   })
   .to(".image2", 3, {
-    yPercent: "-300",
-    duration: 2,
+    yPercent: "-200",
+    duration: 1,
   });
+
+const timeLineSticky = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".desktop",
+    start: "top top",
+    end: () => "+=" + innerHeight * 5,
+    pin: ".desktop",
+    scrub: 1,
+  },
+});
+const timeLineCircle = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".desktop",
+    start: "top top",
+    end: () => "+=" + innerHeight * 5,
+    pin: ".desktop",
+    scrub: 1,
+  },
+});
