@@ -450,6 +450,7 @@ body {
     top: 80%;
 }
 .sticky-content{
+    opacity: 0;
     color: #fff;
     display: -webkit-box;
         display: -webkit-flex;

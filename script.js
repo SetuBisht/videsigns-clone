@@ -74,7 +74,7 @@ const timeLine = gsap.timeline({
     start: "top top",
     end: () => "+=" + innerHeight * 3,
     pin: ".desktop",
-    pinSpacing: false,
+    markers: true,
     scrub: 1,
   },
 });
@@ -90,21 +90,21 @@ timeLine
     duration: 1,
   });
 
-const timeLineSticky = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".desktop",
-    start: "top top",
-    end: () => "+=" + innerHeight * 5,
-    pin: ".desktop",
-    scrub: 1,
-  },
-});
-const timeLineCircle = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".desktop",
-    start: "top top",
-    end: () => "+=" + innerHeight * 5,
-    pin: ".desktop",
-    scrub: 1,
-  },
-});
+// const timeLineSticky = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".desktop",
+//     start: "top top",
+//     end: () => "+=" + innerHeight * 5,
+//     pin: ".desktop",
+//     scrub: 1,
+//   },
+// });
+// const timeLineCircle = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".desktop",
+//     start: "top top",
+//     end: () => "+=" + innerHeight * 5,
+//     pin: ".desktop",
+//     scrub: 1,
+//   },
+// });
