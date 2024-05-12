@@ -68,43 +68,130 @@ let backImage = document.querySelectorAll(".mobile-back");
 backImage.forEach((element) => {
   element.style.transform = "scale(0.97)";
 });
+const buttonContainerTimeline = gsap.timeline();
+
+document
+  .getElementById("button-container")
+  .addEventListener("mouseenter", function () {
+    document.querySelector(".fill-button").style.opacity = "1";
+    buttonContainerTimeline.to(".fill-button", {
+      y: 0,
+      duration: 0.3,
+    });
+    buttonContainerTimeline.to(
+      ".cloneitnow",
+      {
+        color: "white",
+        duration: 0.3,
+      },
+      0
+    );
+  });
+document
+  .getElementById("button-container")
+  .addEventListener("mouseleave", function () {
+    buttonContainerTimeline.to(".fill-button", {
+      y: -180, // Move back to original position
+      duration: 0.5,
+      opacity: 0,
+      onComplete: function () {
+        document.querySelector(".fill-button").style.transform =
+          "translate(0px,90px)"; // Reset transform property
+      },
+    });
+    buttonContainerTimeline.to(
+      ".cloneitnow",
+      {
+        color: "#0b0931",
+        duration: 0.3,
+      },
+      0
+    );
+    // Reset the position of the fill button
+    buttonContainerTimeline.to(".fill-button", {
+      y: 90,
+      duration: 0.01, // Set a very short duration to ensure the reset happens immediately
+    });
+  });
+
 const timeLine = gsap.timeline({
   scrollTrigger: {
     trigger: ".desktop",
     start: "top top",
-    end: () => "+=" + innerHeight * 3,
+    end: () => "+=" + innerHeight * 3.5,
     pin: ".desktop",
-    markers: true,
-    scrub: 1,
+    scrub: 2,
   },
 });
 
 timeLine
+  .to(".sticky1, .c1", {
+    yPercent: "-20", // Start from the bottom
+    opacity: 1,
+  })
   .to(".image1", {
     yPercent: "-150",
-    duration: 1,
+    duration: 5,
     delay: 2,
   })
-  .to(".image2", 3, {
+  .to(
+    ".sticky1, .c1",
+    {
+      yPercent: "-20", // Move up
+      opacity: 0,
+    },
+    "<" // Play this animation before the previous one ends
+  )
+  .to(".image2", {
     yPercent: "-200",
-    duration: 1,
+    duration: 3,
+  })
+  .to(
+    ".sticky2, .c2",
+    {
+      yPercent: "-20", // Start from the bottom
+      opacity: 1,
+      duration: 5,
+    },
+    6
+  ) // Start after 6 seconds
+  .to(
+    ".sticky2, .c2",
+    {
+      yPercent: "-20", // Move up
+      opacity: 0,
+      duration: 5,
+    },
+    11
+  ) // Start after 11 seconds
+  // Continue with the rest of your animations...
+  .to(".sticky3, .c3", {
+    yPercent: "-100", // Start from the bottom
+    opacity: 1,
+    duration: 5,
+  })
+  .to(".sticky3, .c3", {
+    yPercent: "-200", // Move up
+    opacity: 0,
+    duration: 5,
+  })
+  .to(".sticky4, .c4", {
+    yPercent: "-100", // Start from the bottom
+    opacity: 1,
+    duration: 5,
+  })
+  .to(".sticky4, .c4", {
+    yPercent: "-200", // Move up
+    opacity: 0,
+    duration: 5,
+  })
+  .to(".sticky5, .c5", {
+    yPercent: "-100", // Start from the bottom
+    opacity: 1,
+    duration: 5,
+  })
+  .to(".sticky5, .c5", {
+    yPercent: "-200", // Move up
+    opacity: 0,
+    duration: 5,
   });
-
-// const timeLineSticky = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: ".desktop",
-//     start: "top top",
-//     end: () => "+=" + innerHeight * 5,
-//     pin: ".desktop",
-//     scrub: 1,
-//   },
-// });
-// const timeLineCircle = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: ".desktop",
-//     start: "top top",
-//     end: () => "+=" + innerHeight * 5,
-//     pin: ".desktop",
-//     scrub: 1,
-//   },
-// });
