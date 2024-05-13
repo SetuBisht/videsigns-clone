@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let spiral = document.querySelectorAll(".spiral");
   let button = document.querySelectorAll(".button-container");
   let sticky = document.querySelectorAll(".sticky-content");
+  let cbutton = document.querySelectorAll(".clone-button");
   div.forEach((div1) => {
     div1.style.opacity = 0;
     div1.style.transition = "opacity 0.5s ease , transform 0.5s ease";
@@ -21,7 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
   spiral[0].style.transform = "scale(0.7)";
   button[0].style.transition = "opacity 0.5s ease, transform 0.5s ease";
   button[0].style.opacity = 0;
-  button[0].style.transform = `translate3d(-50px, 0, 0)`; // Adjusted translation value
+  button[0].style.transform = `translate3d(-50px, 0, 0)`;
+  cbutton[0].style.transition = "opacity 0.5s ease, transform 0.5s ease";
+  cbutton[0].style.opacity = 0;
+  cbutton[0].style.transform = `translate3d(-50px, 0, 0)`;
+  // Adjusted translation value
 
   vim[0].style.transition = "opacity 0.5s ease, transform 0.5s ease";
   vim[0].style.opacity = 0;
@@ -36,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     button[0].style.opacity = 1;
     button[0].style.transform = `translate3d(0, 0, 0)`; // Reset translation
+    cbutton[0].style.opacity = 1;
+    cbutton[0].style.transform = `translate3d(0, 0, 0)`; // Reset translation
   }, 1200);
   setTimeout(() => {
     spiral[0].style.opacity = 1;
@@ -84,7 +91,7 @@ document
         color: "white",
         duration: 0.3,
       },
-      0
+      5
     );
   });
 document
@@ -93,8 +100,8 @@ document
     buttonContainerTimeline.to(".fill-button", {
       y: -180, // Move back to original position
       duration: 0.5,
-      opacity: 0,
       onComplete: function () {
+        document.querySelector(".fill-button").style.opacity = "0";
         document.querySelector(".fill-button").style.transform =
           "translate(0px,90px)"; // Reset transform property
       },
