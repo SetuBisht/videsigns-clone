@@ -91,7 +91,7 @@ document
         color: "white",
         duration: 0.3,
       },
-      5
+      0
     );
   });
 document
@@ -125,7 +125,7 @@ const timeLine = gsap.timeline({
   scrollTrigger: {
     trigger: ".desktop",
     start: "top top",
-    end: () => "+=" + innerHeight * 3.5,
+    end: () => "+=" + innerHeight * 3.2,
     pin: ".desktop",
     scrub: 2,
   },
@@ -170,8 +170,7 @@ timeLine
       duration: 5,
     },
     11
-  ) // Start after 11 seconds
-  // Continue with the rest of your animations...
+  )
   .to(".sticky3, .c3", {
     yPercent: "-100", // Start from the bottom
     opacity: 1,

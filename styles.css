@@ -1,12 +1,13 @@
+@font-face {
+    font-family: 'Dream';
+    src: url('/assets/dreamorphans.ttf') format('ttf');
+}
+
 * {
     margin: 0px;
     padding: 0px;
 }
-@font-face {
-    font-family: 'Dream Orphans';
-    src: url('/assets/DreamOrphansIt.otf') format('otf');
-    
-}
+
 body {
     font-family: 'Open Sans',
         sans-serif;
@@ -140,7 +141,7 @@ body {
     text-transform: capitalize;
 }
 .vim {
-    font-family: 'Dream Orphans', sans-serif;
+    font-family: 'Dream', sans-serif;
     line-height: 1.2;
     font-weight: 400;
     opacity: 0;
@@ -307,7 +308,7 @@ body {
         margin-top: 0px;
         margin-bottom: 30px;
         padding-bottom: 0px;
-        font-family: 'Dream orphans', sans-serif;
+        font-family: 'Dream', sans-serif;
         color: #aee1f9;
         font-size: 3.6em;
         line-height: 1.3;
@@ -469,7 +470,7 @@ body {
     opacity: 0;
     position: absolute;
     left: 8%;
-    top: 20%;
+    top: 40%;
     right: auto;
     bottom: auto;
     width: 200px;
@@ -520,7 +521,7 @@ body {
 }
 .small-title {
     margin-bottom: 20px;
-    font-family: 'Dream orphans', sans-serif;
+    font-family: 'Dream', sans-serif;
     color: #aee1f9;
     font-size: 2.3em;
     line-height: 1.1;
@@ -529,3 +530,17 @@ body {
     font-size: 1.08em;
 }
 
+
+
+
+@media only screen and (max-width: 1350px) {
+    .bg {
+    font-size: 50px;
+    }
+    ._2 {
+    font-size: 50px;
+    }
+   ._3 {
+     font-size: 50px;
+   }
+}
