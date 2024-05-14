@@ -125,9 +125,10 @@ const timeLine = gsap.timeline({
   scrollTrigger: {
     trigger: ".desktop",
     start: "top top",
-    end: () => "+=" + innerHeight * 3.2,
+    end: () => "+=" + window.innerHeight * 5,
     pin: ".desktop",
-    scrub: 2,
+    scrub: 3,
+    anticipatePin: true,
   },
 });
 
@@ -135,10 +136,11 @@ timeLine
   .to(".sticky1, .c1", {
     yPercent: "-20", // Start from the bottom
     opacity: 1,
+    duration: 2, // Fixed duration
   })
   .to(".image1", {
     yPercent: "-150",
-    duration: 5,
+    duration: 20,
     delay: 2,
   })
   .to(
@@ -146,58 +148,59 @@ timeLine
     {
       yPercent: "-20", // Move up
       opacity: 0,
+      duration: 2, // Fixed duration
     },
     "<" // Play this animation before the previous one ends
   )
   .to(".image2", {
     yPercent: "-200",
-    duration: 3,
+    duration: 20,
   })
   .to(
     ".sticky2, .c2",
     {
-      yPercent: "-20", // Start from the bottom
+      yPercent: "-50", // Start from the bottom
       opacity: 1,
-      duration: 5,
+      duration: 5, // Fixed duration
     },
-    6
+    "<"
   ) // Start after 6 seconds
   .to(
     ".sticky2, .c2",
     {
-      yPercent: "-20", // Move up
+      yPercent: "-50", // Move up
       opacity: 0,
-      duration: 5,
+      duration: 5, // Fixed duration
     },
-    11
+    6
   )
   .to(".sticky3, .c3", {
     yPercent: "-100", // Start from the bottom
     opacity: 1,
-    duration: 5,
+    duration: 5, // Fixed duration
   })
   .to(".sticky3, .c3", {
     yPercent: "-200", // Move up
     opacity: 0,
-    duration: 5,
+    duration: 5, // Fixed duration
   })
   .to(".sticky4, .c4", {
     yPercent: "-100", // Start from the bottom
     opacity: 1,
-    duration: 5,
+    duration: 5, // Fixed duration
   })
   .to(".sticky4, .c4", {
     yPercent: "-200", // Move up
     opacity: 0,
-    duration: 5,
+    duration: 5, // Fixed duration
   })
   .to(".sticky5, .c5", {
     yPercent: "-100", // Start from the bottom
     opacity: 1,
-    duration: 5,
+    duration: 5, // Fixed duration
   })
   .to(".sticky5, .c5", {
     yPercent: "-200", // Move up
     opacity: 0,
-    duration: 5,
+    duration: 5, // Fixed duration
   });
