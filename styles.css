@@ -505,23 +505,23 @@ body {
     opacity: 0;
     color: #fff;
     display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        width: 240px;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 300px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 .small-title {
     margin-bottom: 20px;
@@ -535,7 +535,9 @@ body {
 }
 
 
-
+.mobilescreen {
+    display: none;
+}
 
 @media only screen and (max-width: 1350px) {
     .bg {
@@ -655,11 +657,35 @@ body {
         margin-top: 34px;
         justify-content: center;
         gap: 100px;
-        align-items: flex-start;
+        align-items: center;
         grid-auto-columns: 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
         font-family: 'Open Sans', sans-serif;
         height: fit-content;
+        flex-direction: column;
     }
+        .sticky-wrapper-main{
+        overflow: visible;
+        height: 81%;
+        margin-top: 0px;
+        flex-direction: column;
+        }
+        .mobile{
+        width: 200px;
+        height: 400px;
+        }
+        .mobile-content{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          display: none;
+        }
+            
+        .sticky-content{
+        margin-right: 60px;
+        margin-left: 60px;
+        width: 250px;
+        opacity: 0;
+        }
 }

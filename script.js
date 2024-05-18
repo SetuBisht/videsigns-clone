@@ -12,11 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
     div1.style.opacity = 0;
     div1.style.transition = "opacity 0.5s ease , transform 0.5s ease";
   });
-  sticky.forEach((div1) => {
-    div1.style.opacity = 0;
-    div1.style.transform = "translate3d(0px, 104px, 0px)";
-    div1.style.transition = "opacity 0.5s ease , transform 0.5s ease";
-  });
+  console.log(window.innerWidth, "window.innerWidth ");
+  if (!window.matchMedia("(max-width: 800px)").matches) {
+    sticky.forEach((div1) => {
+      console.log("yhss", div1);
+      div1.style.opacity = 0;
+      div1.style.transform = "translate3d(0px, 200px, 0px)";
+      div1.style.transition = "opacity 0.5s ease , transform 0.5s ease";
+    });
+  } else {
+    // sticky.forEach((div1) => {
+    //   div1.style.opacity = 0;
+    //   div1.style.transform = "translate(104px, 0px, 0px)";
+    //   div1.style.transition = "opacity 0.5s ease , transform 0.5s ease";
+    // });
+  }
+
   spiral[0].style.transition = "opacity 0.5s ease, transform 0.5s ease";
   spiral[0].style.opacity = 0;
   spiral[0].style.transform = "scale(0.7)";
@@ -121,86 +132,98 @@ document
     });
   });
 
-const timeLine = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".desktop",
-    start: "top top",
-    end: () => "+=" + window.innerHeight * 5,
-    pin: ".desktop",
-    scrub: 3,
-    anticipatePin: true,
-  },
-});
-
-timeLine
-  .to(".sticky1, .c1", {
-    yPercent: "-20", // Start from the bottom
-    opacity: 1,
-    duration: 2, // Fixed duration
-  })
-  .to(".image1", {
-    yPercent: "-150",
-    duration: 20,
-    delay: 2,
-  })
-  .to(
-    ".sticky1, .c1",
-    {
-      yPercent: "-20", // Move up
-      opacity: 0,
-      duration: 2, // Fixed duration
+if (!window.matchMedia("(max-width: 800px)").matches) {
+  gsap.set(".sticky1, .c1", { yPercent: 40, opacity: 0 });
+  gsap.set(".sticky2, .c2", { yPercent: 40, opacity: 0 });
+  const timeLine = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".desktop",
+      start: "top top",
+      end: () => "+=" + window.innerHeight * 5,
+      pin: ".desktop",
+      scrub: 3,
+      anticipatePin: true,
     },
-    "<" // Play this animation before the previous one ends
-  )
-  .to(".image2", {
-    yPercent: "-200",
-    duration: 20,
-  })
-  .to(
-    ".sticky2, .c2",
-    {
-      yPercent: "-50", // Start from the bottom
-      opacity: 1,
-      duration: 5, // Fixed duration
-    },
-    "<"
-  ) // Start after 6 seconds
-  .to(
-    ".sticky2, .c2",
-    {
-      yPercent: "-50", // Move up
-      opacity: 0,
-      duration: 5, // Fixed duration
-    },
-    6
-  )
-  .to(".sticky3, .c3", {
-    yPercent: "-100", // Start from the bottom
-    opacity: 1,
-    duration: 5, // Fixed duration
-  })
-  .to(".sticky3, .c3", {
-    yPercent: "-200", // Move up
-    opacity: 0,
-    duration: 5, // Fixed duration
-  })
-  .to(".sticky4, .c4", {
-    yPercent: "-100", // Start from the bottom
-    opacity: 1,
-    duration: 5, // Fixed duration
-  })
-  .to(".sticky4, .c4", {
-    yPercent: "-200", // Move up
-    opacity: 0,
-    duration: 5, // Fixed duration
-  })
-  .to(".sticky5, .c5", {
-    yPercent: "-100", // Start from the bottom
-    opacity: 1,
-    duration: 5, // Fixed duration
-  })
-  .to(".sticky5, .c5", {
-    yPercent: "-200", // Move up
-    opacity: 0,
-    duration: 5, // Fixed duration
   });
+
+  timeLine
+    .to(".sticky1, .c1", {
+      yPercent: "40",
+      opacity: 1,
+      duration: 2,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".image1", {
+      yPercent: "-150",
+      duration: 20,
+      delay: 2,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(
+      ".sticky1, .c1",
+      {
+        yPercent: "-20",
+        opacity: 0,
+        duration: 2,
+        ease: "power1.inOut", // Added easing
+      },
+      "<"
+    )
+    .to(".image2", {
+      yPercent: "-200",
+      duration: 20,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(
+      ".sticky2, .c2",
+      {
+        yPercent: "30",
+        opacity: 1,
+        duration: 5,
+        ease: "power1.inOut", // Added easing
+      },
+      "<"
+    )
+    .to(".sticky2, .c2", {
+      yPercent: "-20",
+      opacity: 0,
+      duration: 5,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".sticky3, .c3", {
+      yPercent: "-100",
+      opacity: 1,
+      duration: 8,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".sticky3, .c3", {
+      yPercent: "-200",
+      opacity: 0,
+      duration: 8,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".sticky4, .c4", {
+      yPercent: "-100",
+      opacity: 1,
+      duration: 8,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".sticky4, .c4", {
+      yPercent: "-200",
+      opacity: 0,
+      duration: 8,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".sticky5, .c5", {
+      yPercent: "-100",
+      opacity: 1,
+      duration: 8,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".sticky5, .c5", {
+      yPercent: "-200",
+      opacity: 0,
+      duration: 8,
+      ease: "power1.inOut", // Added easing
+    });
+}
