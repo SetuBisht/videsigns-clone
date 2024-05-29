@@ -227,3 +227,83 @@ if (!window.matchMedia("(max-width: 800px)").matches) {
       ease: "power1.inOut", // Added easing
     });
 }
+if (window.matchMedia("(max-width: 800px)").matches) {
+  console.log("ASDasd");
+  gsap.set(".stickym1 ", { xPercent: 400, opacity: 0 });
+  gsap.set(".stickym2", { xPercent: 400, opacity: 0 });
+  gsap.set(".stickym3", { xPercent: 400, opacity: 0 });
+  gsap.set(".stickym4", { xPercent: 400, opacity: 0 });
+  gsap.set(".stickym5", { xPercent: 400, opacity: 0 });
+  const timeLine = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".desktop",
+      start: "top top",
+      end: () => "+=" + window.innerHeight * 5,
+      pin: ".desktop",
+      scrub: 0.2,
+      anticipatePin: 1,
+      pinSpacing: false,
+      markers: true,
+    },
+  });
+  timeLine
+    .to(".hero-content-wrapper", {
+      yPercent: -300,
+      ease: "power1.inOut",
+      duration: 0.1,
+    })
+    .to(
+      ".mobile",
+      {
+        yPercent: 20,
+        scale: 1.2,
+        duration: 0.1,
+      },
+      "<"
+    )
+    .to(".stickym1", {
+      xPercent: -100,
+      opacity: 1,
+      duration: 4,
+      ease: "power1.inOut",
+    })
+    .to(".image1", {
+      yPercent: "-150",
+      duration: 20,
+      delay: 2,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(".image2", {
+      yPercent: "-200",
+      duration: 20,
+      ease: "power1.inOut", // Added easing
+    })
+    .to(
+      ".stickym2",
+      {
+        xPercent: -100,
+        opacity: 1,
+        duration: 4,
+        ease: "power1.inOut",
+      },
+      "<"
+    )
+    .to(".stickym3", {
+      xPercent: -100,
+      opacity: 1,
+      duration: 4,
+      ease: "power1.inOut",
+    })
+    .to(".stickym4", {
+      xPercent: -100,
+      opacity: 1,
+      duration: 4,
+      ease: "power1.inOut",
+    })
+    .to(".stickym5", {
+      xPercent: -100,
+      opacity: 1,
+      duration: 4,
+      ease: "power1.inOut",
+    });
+}

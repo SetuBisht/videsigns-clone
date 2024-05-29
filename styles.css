@@ -11,7 +11,7 @@
 body {
     font-family: 'Open Sans',
         sans-serif;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     font-weight: 500;
     font-size: 15px;
@@ -329,6 +329,7 @@ body {
     background-color: #edf1fc;
     color: #0a0a0a;
     text-align: center;
+    
 }
 
 .container-2 {
@@ -557,7 +558,8 @@ body {
 
 @media only screen and (max-width: 800px) {
     .navigation{
-        width: calc(100% - 126px);
+        width: 100vw;
+        justify-content: flex-start;
     }
     .navgation-data{
         padding-left:20px;
@@ -654,9 +656,7 @@ body {
     .mobilescreen{
         width: 100%;
         display: flex;
-        margin-top: 34px;
         justify-content: center;
-        gap: 100px;
         align-items: center;
         grid-auto-columns: 1fr;
         grid-template-columns: 1fr 1fr;
@@ -671,21 +671,25 @@ body {
         margin-top: 0px;
         flex-direction: column;
         }
+        .desktop{
+                    height: 5500px !important;
+        }
         .mobile{
         width: 200px;
         height: 400px;
         }
         .mobile-content{
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          display: none;
+            margin-top: -200px;
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+            
         }
             
         .sticky-content{
         margin-right: 60px;
         margin-left: 60px;
-        width: 250px;
+        width: 300px;
         opacity: 0;
         }
 }
